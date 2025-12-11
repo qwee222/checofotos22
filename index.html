@@ -1,0 +1,118 @@
+
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<title>KFC Regalos - Mobile Responsive</title>
+<meta charset="utf-8">
+<meta http-equiv="X-A-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:type" content="website" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
+<link rel="shortcut icon" href="data:image/x-icon">
+<link href="css/app1.css?id=2fbe2d9a9a40ca9b2489" type="text/css" rel="stylesheet" />
+<style>
+/* Estilos esenciales */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+* { margin: 0; padding: 0; font-family: Poppins; box-sizing: border-box; text-align:center; }
+html, body { font-size: 16px; width: 100%; height: 100%; }
+/* Ajuste para móvil: forzar que el contenido ocupe todo el ancho */
+.app {
+   display: block; /* Desactivar flexbox para layout de columna */
+   max-width: 400px; /* Limitar el ancho máximo si es necesario */
+   margin: 0 auto;
+   padding: 0 10px;
+}
+.left, .right { /* Asegurar que las columnas eliminadas no afecten el layout */
+   margin: 0;
+   max-width: 100%;
+   width: 100%;
+}
+#step_one, #step_two, #step_three { display: none; }
+#step_one { display: block; }
+.prize-content {
+   background:#eaeaea;
+   color:#000;
+   padding:30px 20px;
+   text-align: center;
+   border-radius: 10px;
+   margin-top: 10px;
+}
+.prize-title { text-align: center; font-weight: 700; font-size: 26px }
+.prize-text { padding: 5px 6px; line-height: 18px; color: #BE0612; text-align: center }
+.done { text-align: center; color: #c7db49; }
+.rules { color: #1b316c; padding: 4px 5px; line-height: 22px }
+.share_main_bt {
+   margin: 20px auto 10px;
+   background:#E4002B;
+   border-radius: 10px;
+   width: 80%;
+   line-height: 45px;
+   text-align: center;
+   font-size: 18px;
+   font-weight: bold;
+   color: #fff  !important;
+   cursor: pointer;
+   padding: 0 10px;
+   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+/* Encabezado fijo y general */
+.top-header-img {
+   width: 100%;
+   display: block;
+   margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<img src='https://i.imgur.com/SgeAdZ2.png' class="top-header-img" alt="KFC Header Image" />
+<div id="step_one" class="app">
+<div class="prize-content">
+<div class="prize-title"><p>¡Pozornost!</p></div>
+<div style="text-align: center; margin: 10px 0;">
+<img src="https://i.pinimg.com/736x/46/86/80/46868089bb712b54bdbbe0af88db4307.jpg" width='81%' alt="Premio KFC"/>
+</div>
+<p class="prize-text">Jsme skupina samoživitelek ve věku 30 až 50 let, které hledají vztah, věk pro mě nehraje roli..</p>
+<p class="rules">Už jen pár kroků vás dělí od toho, abyste ode mě dostali svůj dárek. Pokud jste plnoletí, stiskněte Pokračovat..</p>
+<div class="share_main_bt" onclick="goToStep(2)">Pokračovat</div>
+</div>
+</div>
+<div id="step_two" class="app">
+<div class="prize-content" style="background: none; padding-top: 0; padding-bottom: 10px;">
+<div class="prize-title" style="padding-top: 20px;"><p>¡Byli jste přijati!</p></div>
+<div style="text-align: center; margin: 20px 0;">
+<img src="https://i.pinimg.com/736x/46/86/80/46868089bb712b54bdbbe0af88db4307.jpg" width='81%' alt="Premio KFC"/>
+</div>
+<p class="txt1">Poznámka: Souhlasíte s tím, že budete respektovat níže uvedené ženy a vztahy? Pokud někoho znáte, prosím, nezmiňujte se o tom ani nešiřte fámy..</p>
+<p class="done"><i class="fa fa-check-circle fa-3x" aria-hidden="true"></i></p>
+<p class="rules">¡Dokončete poslední proces registrací a získejte schůzku s dívkami.!</p>
+<br>
+<div class="share_main_bt" id="offers">Přijímám</div>
+<br>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+   // URL final a Google
+   var googleRedirect = "https://www.google.com";
+   /**
+    * Función para navegar entre los pasos.
+    * @param {number} step El número del paso al que se quiere ir (2 o 3).
+    */
+   function goToStep(step) {
+       // Ocultar todos los contenedores de pasos
+       $("#step_one, #step_two, #step_three").fadeOut(0);
+       if (step === 2) {
+           $("#step_two").fadeIn(500);
+       } else if (step === 3) {
+           $("#step_three").fadeIn(500);
+       }
+   }
+   // Evento del botón final para redirigir a Google
+   $("#offers").click(function () {
+       window.open(googleRedirect, "_self"); // Redirige en la misma pestaña
+   });
+</script>
+<img src="https://i.imgur.com/riqnJvc.jpeg" style="width:100%; margin-top: 10px;" alt="Footer Image" />
+</body>
+</html>
